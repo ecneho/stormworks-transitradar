@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhehvq2e51qio"]
+
+[ext_resource type="Script" uid="uid://1rtvd4rqtkpc" path="res://vessel.gd" id="1_w4m4n"]
+[ext_resource type="Texture2D" uid="uid://bgknfschijx3a" path="res://icons/helicopter.png" id="2_hflg7"]
+[ext_resource type="Texture2D" uid="uid://7pl7qrwaj2ys" path="res://ui/plane-tooltip.png" id="3_etn68"]
+[ext_resource type="Texture2D" uid="uid://didka6v2mbhdy" path="res://flags/xx.svg" id="4_hflg7"]
+
+[node name="Vessel" type="Node2D"]
+script = ExtResource("1_w4m4n")
+
+[node name="Plane" type="Node2D" parent="."]
+
+[node name="Image" type="Sprite2D" parent="Plane"]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hflg7")
+
+[node name="Tooltip" type="Sprite2D" parent="Plane"]
+texture_filter = 1
+position = Vector2(46, 0)
+scale = Vector2(0.16296293, 0.16296297)
+texture = ExtResource("3_etn68")
+
+[node name="ID" type="RichTextLabel" parent="Plane/Tooltip"]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = -0.010444533
+anchor_right = -0.010444533
+offset_left = -148.50034
+offset_top = -55.227272
+offset_right = 108.00479
+offset_bottom = 53.435455
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.29411766)
+theme_override_font_sizes/normal_font_size = 56
+text = "AAA000"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Flag" type="Sprite2D" parent="Plane/Tooltip"]
+position = Vector2(121.70508, -0.7670288)
+scale = Vector2(0.099076726, 0.099076696)
+texture = ExtResource("4_hflg7")
