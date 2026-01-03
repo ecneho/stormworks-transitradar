@@ -21,7 +21,7 @@ func _process(delta):
 			var country = query_params["cf"]
 			var ves_type = query_params["vs"]
 			var x = float(query_params["x"])
-			var y = float(query_params["y"])
+			var y = -float(query_params["y"])
 			var alt = float(query_params["alt"])
 			
 			# TODO: validation
@@ -29,7 +29,7 @@ func _process(delta):
 			if not has_node(id):
 				var res = vessel_res.instantiate()
 				res.name = id
-				res.ves = Vessel.new(id, $Map, country, ves_type)
+				res.ves = Vessel.new(id, country, ves_type)
 				add_child(res)
 				
 			var ves_node = get_node(id)

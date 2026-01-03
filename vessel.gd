@@ -1,12 +1,11 @@
 extends Node2D
 
-@onready var map_sprite = $"../Map"
 @onready var plane_group = $Plane
 @onready var plane_sprite = $Plane/Image
 @onready var plane_tooltip = $Plane/Tooltip/ID
 @onready var flag = $Plane/Tooltip/Flag
 
-var ves: Vessel = Vessel.new("DRN100", map_sprite, "it", "drn")
+var ves: Vessel = Vessel.new("DRN100", "it", "drn")
 
 func _ready() -> void:
 	plane_tooltip.text = ves.id
@@ -48,7 +47,7 @@ func _draw():
 	for i in range(points.size()):
 		colors.append(get_color_for_altitude(altitudes[i]))
 
-	draw_polyline_colors(points, colors, 2.0)
+	draw_polyline_colors(points, colors, 50.0)
 
 func _process(delta: float) -> void:
 	var last_pos = ves.get_last_pos()
